@@ -1,0 +1,16 @@
+body {
+    background: rgb(49, 49, 49);
+    color: white;
+}
+
+#input-section {
+    padding: 2%;
+}
+
+#games-section {
+    padding: 2%;
+}
+
+.card-header {
+    color: black
+}

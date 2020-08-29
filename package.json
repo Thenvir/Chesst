@@ -1,0 +1,17 @@
+{
+  "name": "chesst-project",
+  "version": "1.0.0",
+  "description": "Saves chess games from any website by link and name",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thenvir Aklakh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.2"
+  }
+}
