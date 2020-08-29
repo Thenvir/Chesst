@@ -1,13 +1,27 @@
 <%- include('partials/header') -%> 
 
 <section id="input-section">
-    <h1>Chesst</h1>
-    <div class="inputDiv container-fluid">
-        <label for="">Game Title</label>
-        <input type="text" name="">
-        <label for="">Game Link</label>
-        <input type="url" name="" id="">
+    <div class="row">
+        <div class="col">
+            <div class="container-fluid">
+                <form action="/" method="post" class="">
+                    <div class="form-group">
+                        <label for="">Game Title</label>
+                        <input type="text" name="" id="" class="form-control">
+                        <label for="">Game Link</label>
+                        <input name="" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-outline-light btn-block">Add</button>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+            <h1 class="title-text">Chesst</h1>
+            <img src="chesstIcon.png" alt="" class="title-img">
+        </div>
     </div>
+    
+    
 </section>
 
 <section id="games-section">
@@ -15,10 +29,12 @@
         <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="card">
                 <div class="card-header">
-                    <h1>Game title here</h1>
+                    <h1 class="card-title">Hikaru vs carlsen game 6 wwcd</h1>
                 </div>
                 <div class="card-body">
+                    <img src="chesstIcon2.png" alt="" class="">
                     <a href=""><h3>Game link here</h3></a>
+                    <button type="button" class="btn btn-dark btn-lg btn-block">GO</button>
                 </div>
             </div>
         </div>
