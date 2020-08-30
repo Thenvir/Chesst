@@ -33,19 +33,18 @@ const Game = mongoose.model("Game", gameSchema);
 
 // Default game
 const game1 = new Game({
-    title: "GM penguingim1 Crazy Blunder", 
+    title: "Games Will Show Here", 
     link: "https://lichess.org/A23XQK61",
 });
 
 // Default games
 const defaultGames = [game1];
-let firstVisit = true;
 
 // Render index page
 app.get('/', function(req, res){
     // Get games from DB
     Game.find({}, function(err, foundGames){
-        if(firstVisit === true){
+        if(foundGames.length === 0){
             // Insert default if DB is empty - else render games
             Game.insertMany(defaultGames, function(err2){
                 if(err2){
@@ -54,7 +53,6 @@ app.get('/', function(req, res){
                     console.log("Successfully saved default items to db");
                 }
             });
-            firstVisit = false;
             res.redirect('/');
         } else {
             res.render('index', {games: foundGames});
