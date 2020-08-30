@@ -1,4 +1,4 @@
-# Chesst = The Chess Game Saver
+# Chesst - The Chess Game Saver
 # https://chesst.herokuapp.com/
 
 - Powered by NodeJS + Express Backend 
