@@ -9,18 +9,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-// Local storage for now
-let games = [];
-// function Game(title, link) {
-//     this.title = title;
-//     this.link = link;
-// };
-// var game1 = new Game("Me vs Adrian, Chigorin", "https://lichess.org/YlZfgDfs");
-// games.push(game1);
-
-// chesstpass
 // Connect to mongo 
-mongoose.connect("mongodb+srv://admin-thenvir:chesstpass@cluster0.hgwhu.mongodb.net/chesstDB", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://user:pass@cluster0.hgwhu.mongodb.net/chesstDB", {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Create Schema
 const gameSchema = {
