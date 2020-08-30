@@ -18,9 +18,9 @@ let games = [];
 // var game1 = new Game("Me vs Adrian, Chigorin", "https://lichess.org/YlZfgDfs");
 // games.push(game1);
 
-
+// chesstpass
 // Connect to mongo 
-mongoose.connect("mongodb://localhost:27017/chesstDB", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://admin-thenvir:chesstpass@cluster0.hgwhu.mongodb.net/chesstDB", {useNewUrlParser: true, useUnifiedTopology: true});
 
 // Create Schema
 const gameSchema = {
@@ -33,19 +33,19 @@ const Game = mongoose.model("Game", gameSchema);
 
 // Default game
 const game1 = new Game({
-    title: "Me vs Adrian, Chigorin", 
-    link: "https://lichess.org/YlZfgDfs",
+    title: "GM penguingim1 Crazy Blunder", 
+    link: "https://lichess.org/A23XQK61",
 });
 
 // Default games
 const defaultGames = [game1];
-
+let firstVisit = true;
 
 // Render index page
 app.get('/', function(req, res){
     // Get games from DB
     Game.find({}, function(err, foundGames){
-        if(foundGames.length === 0){
+        if(firstVisit){
             // Insert default if DB is empty - else render games
             Game.insertMany(defaultGames, function(err2){
                 if(err2){
@@ -54,6 +54,7 @@ app.get('/', function(req, res){
                     console.log("Successfully saved default items to db");
                 }
             });
+            firstVisit = false;
             res.redirect('/');
         } else {
             res.render('index', {games: foundGames});
