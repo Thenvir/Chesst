@@ -34,7 +34,7 @@ const Game = mongoose.model("Game", gameSchema);
 // Default game
 const game1 = new Game({
     title: "Games Will Show Here", 
-    link: "https://lichess.org/A23XQK61",
+    link: "https://lichess.org/cEsWZ31M",
 });
 
 // Default games
