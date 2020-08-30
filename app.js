@@ -45,7 +45,7 @@ let firstVisit = true;
 app.get('/', function(req, res){
     // Get games from DB
     Game.find({}, function(err, foundGames){
-        if(firstVisit){
+        if(firstVisit === true){
             // Insert default if DB is empty - else render games
             Game.insertMany(defaultGames, function(err2){
                 if(err2){
