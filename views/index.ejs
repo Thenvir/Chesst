@@ -19,7 +19,7 @@
             <h1 class="title-text">Chesst</h1>
             <img src="chesstIcon.png" alt="" class="title-img">
             <br>
-            <a target="_blank" href="https://lichess.org/training/daily" class="lichess-puzzle"><i class="far fa-hand-point-right"> </i> Click for Daily Lichess Puzzle</a>
+            <a target="_blank" href="https://lichess.org/training/daily" class="lichess-puzzle" rel="noopener noreferrer"><i class="far fa-hand-point-right" > </i> Click for Daily Lichess Puzzle</a>
         </div>
     </div>
     
@@ -35,9 +35,11 @@
                         <h1 class="card-title"><%= game.title %></h1>
                     </div>
                     <div class="card-body">
-                        <img src="chesstIcon2.png" alt="" class="">
-                        <a target="_blank" href="<%= game.link %>"><h5><%= game.link %></h5></a>
-                        <button type="button" class="btn btn-dark btn-lg btn-block">Remove</button>
+                        <form action="/delete" method="post">
+                            <img src="chesstIcon2.png" alt="" class="">
+                            <a target="_blank" href="<%= game.link %>"><h5><%= game.link %></h5></a>
+                            <button type="submit" name="removeButton" value="<%= game.link %>" class="btn btn-dark btn-lg btn-block">Remove</button>
+                        </form>
                     </div>
                 </div>
             </div>
